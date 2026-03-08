@@ -1,7 +1,13 @@
+import { useState } from "react";
 import PostCard from "./PostCard";
-import PostCount from "./PostCount";
 
-function PostList({ posts }) {
+function PostList({ posts, favorites, onToggleFavorite }) {
+  const [search, setSearch] = useState("");
+
+  const filtered = posts.filter((post) =>
+    post.title.toLowerCase().includes(search.toLowerCase()),
+  );
+
   return (
     <div>
       <h2
@@ -35,8 +41,6 @@ function PostList({ posts }) {
           ไม่พบโพสต์ที่ค้นหา
         </p>
       )}
-
-      <PostCount count={posts.length} />
 
       {filtered.map((post) => (
         <PostCard
