@@ -60,6 +60,7 @@ function PostList() {
       >
         โพสต์ล่าสุด
       </h2>
+      <PostCount count={filtered.length} />
 
       <input
         type="text"
