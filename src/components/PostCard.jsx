@@ -5,7 +5,7 @@ import CommentList from "./CommentList";
 
 function PostCard({ post }) {
   const { favorites, toggleFavorite } = useFavorites();
-  const isFavorite = favorites.includes(post.id);
+  const isFavorite = favorites?.includes(post?.id);
   const [showComments, setShowComments] = useState(false);
 
   return (
